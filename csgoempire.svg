@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="80" viewBox="0 0 340 80">
+  <!-- Тень -->
+  <text x="20" y="52" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="2" fill="rgba(0,0,0,0.45)">
+    CSGO
+  </text>
+
+  <text x="155" y="52" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="2" fill="rgba(0,0,0,0.45)">
+    EMPIRE
+  </text>
+
+  <!-- Основной текст + тонкая обводка -->
+  <text x="18" y="48" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="2" fill="#FFFFFF" stroke="#000000" stroke-width="1.5">
+    CSGO
+  </text>
+
+  <text x="153" y="48" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="2" fill="#D8A52A" stroke="#000000" stroke-width="1">
+    EMPIRE
+  </text>
+</svg>
