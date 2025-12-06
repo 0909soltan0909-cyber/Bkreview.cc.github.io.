@@ -86,10 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const show =
                 filter === "all" ||
-                (filter === "rb" && cats.includes("rb")) ||
-                (filter === "popular" && cats.includes("popular")) ||
-                (filter === "bonus" && cats.includes("bonus")) ||
-                (filter === "reliable" && cats.includes("reliable"));
+                (filter === "bk" && cats.includes("bk")) ||
+                (filter === "cas" && cats.includes("cas")) ||
+                (filter === "skin" && cats.includes("skin")) ||
+                (filter === "more" && cats.includes("more"));
 
             card.style.display = show ? "" : "none";
         });
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // по умолчанию показываем "Букмекеры для ставок"
-    applyFilter("rb");
+    applyFilter("bk");
 });
 
 
