@@ -342,19 +342,17 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
 }
-
 .platform-card {
     background: var(--card-bg);
     border-radius: 10px;
-    padding: 18px;
+    padding: 14px;
     border: 1px solid var(--border);
     transition: all 0.3s;
     position: relative;
-    min-height: 350px;
     display: flex;
     flex-direction: column;
+    /* без min-height — высота по контенту */
 }
-
 .platform-card:hover {
     transform: translateY(-5px);
     border-color: var(--border-light);
@@ -368,18 +366,16 @@ body {
     align-items: flex-start;
     margin-bottom: 10px;
 }
-
-.platform-badge {
-    background: var(--dark-bg);
-    color: var(--gray-light);
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 10px;
-    font-weight: bold;
-    border: 1px solid var(--border-light);
-    transition: all 0.3s ease;
+.platform-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%; /* важно, чтобы flex работал корректно */
 }
 
+
+
+ 
 .platform-logo {
     width: 90px;
     height: 30px;
@@ -480,7 +476,7 @@ body {
     text-align: center;
     color: inherit;
 
-    margin-top: auto;   /* ВАЖНО: прижимаем кнопку к низу карточки */
+    margin-top: 10px;   /* обычный отступ ОТ текста */
     margin-bottom: 5px;
 }
 
@@ -715,14 +711,12 @@ body {
         margin-bottom: 20px;
     }
 
-    .platforms-grid {
-        grid-template-columns: 1fr;
+   
+        .platform-card {
+        padding: 14px;         /* можно даже 12, если хочешь ещё меньше */
+        /* min-height: 340px;  УДАЛЯЕМ */
     }
 
-    .platform-card {
-        padding: 16px;
-        min-height: 340px;
-    }
 
     .banner-item {
         font-size: 13px;
@@ -798,10 +792,11 @@ body {
         flex-direction: column;
         gap: 12px;
     }
-
+}
+    @media (max-width: 480px) {
     .platform-card {
-        padding: 14px;
-        min-height: 330px;
+        padding: 12px;        /* чуть меньше отступы */
+        /* min-height: 330px;  УДАЛЯЕМ */
     }
 
     .bonus-text {
@@ -813,6 +808,7 @@ body {
         padding: 8px;
     }
 }
+
 /* Контактная страница */
 .contact-main {
     padding: 60px 0;
@@ -1432,9 +1428,9 @@ html[data-theme="light"] .light-circle { opacity: 1; }
 
 .star {
     position: relative;
-    width: 18px;
-    height: 18px;
-    font-size: 18px;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
     line-height: 1;
 }
 
@@ -1459,4 +1455,243 @@ html[data-theme="light"] .light-circle { opacity: 1; }
 .star-rating .stars {
     position: relative;
     z-index: 5;
+}
+/* Логотипы CSGOEmpire в строку */
+.platform-title-logos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.platform-logo-img {
+    height: 32px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.platform-logo-svg {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+}
+.platform-title-logos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.platform-logo-img {
+    height: 32px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.platform-logo-svg {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+/* Текст CSGO EMPIRE рядом с логотипами */
+.platform-title-text {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--text-light);
+}
+
+.platform-title-text-accent {
+    color: #ffcc33; /* жёлтый акцент */
+}
+/* Увеличенный текст */
+.platform-title-text {
+    font-size: 22px;          /* было 18px — теперь больше */
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    margin-left: 4px;         /* смещаем левее */
+}
+
+.platform-title-text-accent {
+    color: #ffcc33;
+}
+
+/* Логотипы чуть отодвинем влево */
+.platform-title-logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;                /* расстояние между элементами */
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+/* ==== УВЕЛИЧЕНИЕ И СМЕЩЕНИЕ НАЗВАНИЯ CSGO EMPIRE ==== */
+
+/* Контейнер логотипов */
+.platform-title-logos {
+    display: flex;
+    align-items: center;
+    gap: 12px;          /* расстояние между логотипами и текстом */
+    margin: 0 0 14px 0; /* сверху/снизу норм, слева не трогаем */
+}
+
+/* PNG-логотип */
+.platform-logo-img {
+    height: 38px;       /* было 32px */
+    width: auto;
+}
+
+/* SVG-логотип */
+.platform-logo-svg {
+    height: 34px;       /* было 28px */
+    width: auto;
+}
+
+/* Текст CSGO EMPIRE */
+.platform-title-text {
+    font-size: 28px;       /* УВЕЛИЧИЛ (было 22px) */
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-left: -6px;     /* СМЕСТИЛ ЛЕВЕЕ */
+    margin-top: 2px;
+    color: #ffffff;
+}
+
+/* Жёлтое слово EMPIRE */
+.platform-title-text-accent {
+    color: #ffcc33;
+}
+/* Хедер карточки: название слева, бейджи справа */
+.platform-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+/* сама карточка */
+.platform-card {
+    padding: 10px 14px 10px;          /* было 14px — ещё компактнее */
+}
+
+/* заголовок / бейджи — ближе друг к другу */
+.platform-header {
+    margin-bottom: 4px;
+}
+
+/* лого + CSGO EMPIRE — ближе к верху и к звёздам */
+.platform-title-logos {
+    margin-top: 2px;
+    margin-bottom: 6px;
+}
+
+/* звёзды — плотнее */
+.rating-section {
+    margin-bottom: 6px;
+}
+
+/* список — меньше шрифт и отступы */
+.platform-features {
+    margin-bottom: 6px;
+}
+
+.platform-features li {
+    font-size: 11px;
+    margin-bottom: 2px;
+}
+
+/* кнопка "Перейти на..." — компактнее и ближе к тексту */
+.platform-bonus {
+    padding: 8px 10px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+}
+
+.bonus-text {
+    font-size: 12px;
+    padding: 6px 8px;
+}
+
+/* "Читать полный обзор" ближе к кнопке */
+.review-link-container {
+    margin-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* сетка — поменьше зазоры + меньше минимальная ширина колонки */
+.platforms-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+/* на мобиле карточки ещё компактнее */
+@media (max-width: 480px) {
+    .platform-card {
+        padding: 8px 10px;
+    }
+
+    .platform-title {
+        font-size: 16px;
+    }
+
+    .bonus-text {
+        font-size: 11px;
+    }
+}
+/* /mnt/data/style.css — добавить в конец */
+.platform-card.no-bottom-gap { padding-bottom: 8px; } /* ровный низ */
+.platform-card.no-bottom-gap .platform-bonus { margin-bottom: 0; } /* кнопка без лишнего низа */
+.platform-card.no-bottom-gap .review-link-container { margin-top: 6px; padding-bottom: 0; }
+.platform-card.no-bottom-gap > *:last-child { margin-bottom: 0 !important; padding-bottom: 0 !important; } /* страховка */
+/* /mnt/data/style.css — добавить в самый конец */
+
+/* Убираем расстояние между логотипом и текстом CSGO EMPIRE */
+.platforms-grid > .platform-card:first-of-type .platform-title-logos {
+    gap: 0 !important;
+}
+
+
+/* Хедер — название слева, бейджи справа */
+.platform-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+
+
+
+/* Центрирование логотипа у всех карточек */
+.platform-title-logos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* === Центрирование звёзд у всех карточек === */
+
+.rating-section {
+    display: flex !important;
+    justify-content: center !important;  /* центр горизонтально */
+    align-items: center !important;      /* центр вертикально */
+    width: 100%;
+    margin-top: 10px !important;         /* расстояние сверху под логотипом */
+    margin-bottom: 10px !important;
+}
+
+.rating-section .star-rating {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+.star-rating .stars {
+    display: flex;
+    gap: 4px;
 }
